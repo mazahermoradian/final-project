@@ -4,9 +4,10 @@
 
 پیش نیاز اجرای پروژه:
 
-1- س
-## How To Run
-1. pip install -r requirements.txt to install all dependencies
+1- نیازمندی های پروژه با دستورpip install -r requirements.txt
+2- تنظیم کردن دیتابیس با اجرای فایل reset_db.py
+3- دادن داده های فیک برای آزمایش پروژه با اجرای فایل populate.py
+
 2. while in base directory ,the directory with manage.py  ,Run following in terminal
 
     -->python3 reset_db.py  ,this setups database
