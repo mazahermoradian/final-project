@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
 
-        <h1>Persons</h1>
+        <h1>کاربران</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -11,7 +11,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Add Person
+                            افزودن کاربر
                         </button>
                     </h2>
                 </div>
@@ -23,31 +23,31 @@
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col">
-                                    <label>Person ID</label>
-                                    <input required type="text" class="form-control" name="pid" placeholder="Enter 6 digit ID"
+                                    <label>آیدی کاربر</label>
+                                    <input required type="text" class="form-control" name="pid" placeholder="آیدی 6 رقمی وارد کنید"
                                            pattern="[0-9]{6}" maxlength="6">
                                 </div>
                                 <div class="col">
-                                    <label>Name</label>
+                                    <label>نام</label>
                                     <input required type="text" class="form-control" name="name"
-                                           placeholder="Enter Name"
+                                           placeholder="نام را وارد کنید"
                                            pattern="[a-zA-Z ]{3,}">
                                 </div>
                                 <div class="col">
-                                    <label>Email</label>
+                                    <label>پست الکترونیکی</label>
                                     <input required type="email" class="form-control" name="email"
-                                           placeholder="Enter Email">
+                                           placeholder="پست الکترونیکی را وارد کنید">
                                 </div>
 
                                 <div class="col">
-                                    <label>Address</label>
+                                    <label>نشانی</label>
                                     <input required type="text" class="form-control" name="address"
-                                           placeholder="Enter Address">
+                                           placeholder="نشانی را وارد کنید">
                                 </div>
                             </div>
 
                             <br>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">ثبت</button>
 
                         </form>
                     </div>
@@ -58,7 +58,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Search
+                            جست و جو
                         </button>
                     </h2>
                 </div>
@@ -66,10 +66,10 @@
                     <div class="card-body">
                         <form method="get">
 
-                            <label>Enter Pid or Name</label>
-                            <input required type="text" name="q" placeholder="Pid or Name">
+                            <label>:شابک کتاب یا نام کاربر را وارد کنید</label>
+                            <input required type="text" name="q" placeholder="شابک 13 رقمی یا نام کاربر">
 
-                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-primary">جست و جو</button>
 
                         </form>
                     </div>
@@ -96,11 +96,11 @@
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Person ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Edit</th>
+                    <th scope="col">آیدی کاربر</th>
+                    <th scope="col">نام</th>
+                    <th scope="col">پست الکترونیکی</th>
+                    <th scope="col">نشانی</th>
+                    <th scope="col">ویرایش</th>
 
 
                 </tr>
@@ -115,7 +115,7 @@
                         <td>{{ obj.name }}</td>
                         <td>{{ obj.email }}</td>
                         <td>{{ obj.address }}</td>
-                        <td><a href="{% url 'edit_person' obj.id %}"> Edit </a></td>
+                        <td><a href="{% url 'edit_person' obj.id %}"> ویرایش </a></td>
 
 
                     </tr>
@@ -143,8 +143,7 @@
                 </ul>
             </nav>
         {% else %}
-            <h4>Nothing Found</h4>
-            <p>Add Records if table is empty</p>
+            <h4>!پیزی پیدا نشد</h4>
         {% endif %}
     </div>
 {% endblock %}
