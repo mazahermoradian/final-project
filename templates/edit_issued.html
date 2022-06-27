@@ -8,10 +8,10 @@
             <thead class="table-dark">
             <tr>
 
-                <th scope="col">Person</th>
-                <th scope="col">Book</th>
-                <th scope="col">Date Issued</th>
-                <th scope="col">Date Return</th>
+                <th scope="col">کاربر</th>
+                <th scope="col">نام کتاب</th>
+                <th scope="col">تاریخ امانت</th>
+                <th scope="col">تاریخ تحویل</th>
 
 
 
@@ -40,11 +40,11 @@
 
 
                 <div class="col" style="text-align: center">
-                    Change Return Date<br>
+                    تغییر تاریخ تحویل<br>
                     <input type="date" id="start" name="expires_on">
                     <br>
                     <br>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">به روز رسانی</button>
                 </div>
 
         </form>
@@ -52,7 +52,7 @@
 
             <div class="add-row">
             <form method="get" action="{% url 'delete_issued' task_obj.id %}" style="text-align: center">
-                <button type=" submit" class="btn btn-danger">Delete Record</button>
+                <button type=" submit" class="btn btn-danger">حذف اطلاعات</button>
             </form>
             </div>
 
