@@ -8,35 +8,35 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col">
-                    <label>Person ID</label>
+                    <label>آیدی کاربر</label>
                     <input type="text" class="form-control" name="pid"
                            placeholder="{{ task_obj.pid }}" value="{{ task_obj.pid }}">
                 </div>
                 <div class="col">
-                    <label>Name</label>
+                    <label>نام کاربر</label>
                     <input type="text" class="form-control" name="name"
                            placeholder="{{ task_obj.name }}" value="{{ task_obj.name }}">
                 </div>
                 <div class="col">
-                    <label>Email</label>
+                    <label>پست الکترونیکی</label>
                     <input type="email" class="form-control" name="email"
                            placeholder="{{ task_obj.email }}" value="{{ task_obj.email }}">
                 </div>
 
                 <div class="col">
-                    <label>Address</label>
+                    <label>نشانی</label>
                     <input type="text" class="form-control" name="address" placeholder="{{ task_obj.address }}"
                            value="{{ task_obj.address }}">
                 </div>
             </div>
 
             <br>
-            <button type=" submit" class="btn btn-primary">Update</button>
+            <button type=" submit" class="btn btn-primary">به روز رسانی</button>
 
         </form>
         <br>
     <form  method="get" action="{% url 'delete_person' task_obj.id %}" style="text-align: center">
-        <button type=" submit" class="btn btn-danger">Delete Record</button>
+        <button type=" submit" class="btn btn-danger">حذف اطلاعات</button>
     </form>
     </div>
 
