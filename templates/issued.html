@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
 
-        <h1>ISSUED TO People</h1>
+        <h1>امانت سپرده شده به افراد</h1>
 
     <div class="accordion" id="accordionExample">
             <div class="card">
@@ -11,7 +11,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Issue Books
+                            امانت ها
                         </button>
                     </h2>
                 </div>
@@ -24,9 +24,9 @@
             <div class="row">
 
                 <div class="col">
-                    <label>Person ID</label>
+                    <label>آیدی کاربر</label>
 
-                    <input required list="PersonID" name="pid" id="pid_input" class="form-control" placeholder="Select from list">
+                    <input required list="PersonID" name="pid" id="pid_input" class="form-control" placeholder="از فهرست انتخاب کنید">
                     <datalist id="PersonID">
                         {% for obj in all_persons %}
                             <option value="{{ obj.pid }}">
@@ -36,9 +36,9 @@
                 </div>
 
                 <div class="col">
-                    <label>Book ISBN</label>
+                    <label>شابک کتاب</label>
 
-                    <input required list="ISBN" name="isbn" id="find" class="form-control" placeholder="Select from list">
+                    <input required list="ISBN" name="isbn" id="find" class="form-control" placeholder="از فهرست انتخاب کنید">
                     <datalist id="ISBN">
                         {% for obj in all_books %}
                             <option value="{{ obj.isbn }}">
@@ -49,7 +49,7 @@
             </div>
 
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">ثبت</button>
 
         </form>
                     </div>
@@ -60,7 +60,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Search
+                            جست و جو
                         </button>
                     </h2>
                 </div>
@@ -68,10 +68,10 @@
                     <div class="card-body">
                         <form method="get">
 
-                            <label>Enter Pid or ISBN</label>
-                            <input required type="text" name="q" placeholder="Pid or ISBN">
+                            <label>:آیدی کاربر یا شابک کتاب را وارد کنید</label>
+                            <input required type="text" name="q" placeholder="شابک 13 رقمی یا آیدی کاربر">
 
-                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-primary">جست و جو</button>
 
                         </form>
                     </div>
@@ -98,11 +98,11 @@
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Person </th>
-                    <th scope="col">Book </th>
-                    <th scope="col">Date Issued</th>
-                    <th scope="col">Date Return</th>
-                    <th scope="col">Edit</th>
+                    <th scope="col">کاربر </th>
+                    <th scope="col">نام کتاب </th>
+                    <th scope="col">تاریخ امانت</th>
+                    <th scope="col">تاریخ تحویل</th>
+                    <th scope="col">ویرایش</th>
 
 
                 </tr>
@@ -117,7 +117,7 @@
                         <td>{{ obj.isbn }}</td>
                         <td>{{ obj.date_issued }}</td>
                         <td>{{ obj.expires_on }}</td>
-                    <td><a href="{% url 'edit_issued' obj.id %}"> Edit </a></td>
+                    <td><a href="{% url 'edit_issued' obj.id %}">ویرایش</a></td>
 
 
                     </tr>
@@ -145,8 +145,7 @@
                 </ul>
             </nav>
         {% else %}
-            <h4>Nothing Found</h4>
-            <p>Issue books if table is empty</p>
+            <h4>!چیزی پیدا نشد</h4>
         {% endif %}
 
     </div>
