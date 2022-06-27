@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="container">
-        <h1>BOOKS </h1>
+        <h1>کتاب ها</h1>
 
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -11,7 +11,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                                 data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            Add Books
+                            افزودن کتاب
                         </button>
                     </h2>
                 </div>
@@ -23,30 +23,30 @@
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col">
-                                    <label>Book ISBN</label>
-                                    <input required type="text" class="form-control" name="isbn" placeholder="Enter 13 digit ISBN"
+                                    <label>شابک کتاب</label>
+                                    <input required type="text" class="form-control" name="isbn" placeholder="شابک 13 رقمی را وارد کنید"
                                     pattern="[0-9]{13}" maxlength="13">
                                 </div>
                                 <div class="col">
-                                    <label>Book Name</label>
-                                    <input required type="text" class="form-control" name="name" placeholder="Enter Name"
+                                    <label>نام کتاب</label>
+                                    <input required type="text" class="form-control" name="name" placeholder="نام کتاب را وارد کنید"
                                     pattern="[a-zA-Z ]{3,}">
                                 </div>
                                 <div class="col">
-                                    <label>Book Author</label>
-                                    <input required type="text" class="form-control" name="author" placeholder="Enter Author"
+                                    <label>نام نویسنده</label>
+                                    <input required type="text" class="form-control" name="author" placeholder="نام نویسنده را وارد کنید"
                                     pattern="[a-zA-Z ]{4,}">
                                 </div>
 
                                 <div class="col">
-                                    <label>Book Publisher</label>
+                                    <label>نام ناشر</label>
                                     <input required type="text" class="form-control" name="publisher"
-                                           placeholder="Enter Publisher">
+                                           placeholder="نام ناشر را وارد کنید">
                                 </div>
                             </div>
 
                             <br>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">ثبت</button>
 
                         </form>
                     </div>
@@ -57,7 +57,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
                                 data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Search
+                            جست و جو
                         </button>
                     </h2>
                 </div>
@@ -65,10 +65,10 @@
                     <div class="card-body">
                         <form method="get">
 
-                            <label>Enter ISBN or Name or Author</label>
-                            <input required type="text" name="q" placeholder="ISBN or Name or Author">
+                            <label>:شابک کتاب یا نام نویسنده را وارد کنید</label>
+                            <input required type="text" name="q" placeholder="شابک 13 رقمی یا نام نویسنده">
 
-                            <button type="submit" class="btn btn-primary">Search</button>
+                            <button type="submit" class="btn btn-primary">جست و جو</button>
 
                         </form>
                     </div>
@@ -94,11 +94,11 @@
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Book Name</th>
-                    <th scope="col">Book ISBN</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Publisher</th>
-                    <th scope="col">Edit</th>
+                    <th scope="col">نام کتاب</th>
+                    <th scope="col">شابک کتاب</th>
+                    <th scope="col">نویسنده</th>
+                    <th scope="col">ناشر</th>
+                    <th scope="col">ویرایش</th>
 
 
                 </tr>
@@ -114,7 +114,7 @@
                         <td>{{ obj.isbn }}</td>
                         <td>{{ obj.author }}</td>
                         <td>{{ obj.publisher }}e</td>
-                        <td><a href="{% url 'edit_book' obj.id %}"> Edit </a></td>
+                        <td><a href="{% url 'edit_book' obj.id %}"> ویرایش </a></td>
 
 
                     </tr>
@@ -143,9 +143,7 @@
             </nav>
 
         {% else %}
-            <h4>Nothing Found</h4>
-            <p>Add Records if table is empty</p>
+            <h4>!چیزی پیدا نشد</h4>
             </div>
         {% endif %}
 {% endblock %}
-
