@@ -9,11 +9,6 @@ django.setup()
 
 from library.models import *
 
-"""
-Used to insert Fake data into Model
-"""
-
-
 def populate_data():
     fake = Faker()
     Faker.seed(0)
